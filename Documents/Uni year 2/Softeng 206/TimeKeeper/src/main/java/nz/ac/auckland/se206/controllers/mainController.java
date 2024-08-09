@@ -37,6 +37,7 @@ public class mainController {
     private int id;
     private TextField clickedField;
     public static ArrayList<Subject> subjects = new ArrayList<Subject>();
+    public static int allTimeHours = 0;
     private double totalHours = 0;
     private double totalHoursIndividual = 0;
     private double extraHours = 0;
@@ -61,6 +62,22 @@ public class mainController {
             barField.setProgress(subjects.get(i).getZeroToOne());
             TextField nameField = (TextField) name1.getScene().lookup("#" + name);
             nameField.setText(subjects.get(i).getName());
+            totalHours += subjects.get(i).getHours();
+            allTimeHours += subjects.get(i).getHours();
+            extraHours += subjects.get(i).getExtra();
+            hrsAll.setText("Total hours all time: " + Math.round(allTimeHours * 100)/100);
+            hrsWeek.setText("Total hours this week: " + Math.round(totalHours * 100)/100);
+            hrsExtra.setText("Extra hours worked this week: " + Math.round(extraHours * 100)/100);
+            if (subjects.get(i).getTotalHours() <= 10) {
+                totalHoursIndividual += subjects.get(i).getHours();
+            } else {
+                totalHoursIndividual += subjects.get(i).getHours() - (subjects.get(i).getExtra());
+            }
+            if (totalHoursIndividual > 40) {
+                hrsMore.setText("Congratulations, you completed your 40 hours!");
+            } else {
+                hrsMore.setText("Just " + Math.round((40 - totalHoursIndividual) * 100)/100 + " more hours to go!");
+            }
         }
     }
 
@@ -99,18 +116,20 @@ public class mainController {
                 subject.setName(subjects.get(i).getName());
                 temp.add(subject);
             }
-            System.out.println(temp.size());
             subjects.clear();
             for (Subject subject : temp) {
                 subjects.add(subject);
             }
+            totalHours = 0;
+            totalHoursIndividual = 0;
+            extraHours = 0;
             temp.clear();
             setUi();
             return;
         }
         Boolean result = subjects.get(id-1).setTime(message);
         if (!result) {
-            clickedField.setText("Invalid");
+            clickedField.clear();
             return;
         }
         clickedField.clear();
@@ -121,7 +140,9 @@ public class mainController {
         bar.setProgress(subjects.get(id-1).getZeroToOne());
         percentage.setText(subjects.get(id-1).getPercentage() + "%");
         totalHours += subjects.get(id-1).getHours();
+        allTimeHours += subjects.get(id-1).getHours();
         extraHours += subjects.get(id-1).getExtra();
+        hrsAll.setText("Total hours all time: " + Math.round(allTimeHours * 100)/100);
         hrsWeek.setText("Total hours this week: " + Math.round(totalHours * 100)/100);
         hrsExtra.setText("Extra hours worked this week: " + Math.round(extraHours * 100)/100);
         if (subjects.get(id-1).getTotalHours() <= 10) {

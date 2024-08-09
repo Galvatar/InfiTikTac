@@ -59,6 +59,10 @@ public class App extends Application {
       // Read the file line by line
       String line;
       while ((line = bufferedReader.readLine()) != null) {
+        if (count2 == 5) {
+          mainController.allTimeHours = Integer.parseInt(line);
+          break;
+        }
         if (count == 0) {
           mainController.subjects.get(count2).setName(line);
           count++;
@@ -80,7 +84,6 @@ public class App extends Application {
 
       // Close the BufferedReader
       bufferedReader.close();
-      file.delete();
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -92,6 +95,8 @@ public class App extends Application {
 
   public void onExit() {
     try {
+      File file = new File("savedata.txt");
+      file.delete();
       // Create a FileWriter object
       FileWriter fileWriter = new FileWriter("savedata.txt");
 
@@ -105,6 +110,7 @@ public class App extends Application {
         printWriter.println(mainController.subjects.get(i).getZeroToOne());
         printWriter.println(mainController.subjects.get(i).getPercentage());
       }
+      printWriter.println(mainController.allTimeHours);
 
       // Close the PrintWriter
       System.out.println("File saved");
