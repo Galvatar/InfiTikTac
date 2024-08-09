@@ -34,7 +34,7 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-    stage.setTitle("Window");
+    stage.setTitle("TimeKeeper");
     root.requestFocus();
 
     stage.setOnCloseRequest(event -> {
@@ -61,12 +61,16 @@ public class App extends Application {
       while ((line = bufferedReader.readLine()) != null) {
         if (count == 0) {
           mainController.subjects.get(count2).setName(line);
+          count++;
         } else if (count == 1) {
           mainController.subjects.get(count2).setDoubleTime(Double.parseDouble(line));
+          count++;
         } else if (count == 2) {
           mainController.subjects.get(count2).setOldTime(Double.parseDouble(line));
+          count++;
         } else if (count == 3) {
           mainController.subjects.get(count2).setZeroToOne(Double.parseDouble(line));
+          count++;
         } else if (count == 4) {
           mainController.subjects.get(count2).setPercentage(Integer.parseInt(line));
           count = 0;

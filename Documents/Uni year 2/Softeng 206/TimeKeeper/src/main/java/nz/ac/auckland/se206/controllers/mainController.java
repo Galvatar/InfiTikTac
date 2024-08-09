@@ -53,9 +53,14 @@ public class mainController {
     public void setUi() {
         for (int i = 0; i < 5; i++) {
             String name = "name" + (i+1);
+            String bar = "bar" + (i+1);
+            String percentage = "percentage" + (i+1);
+            Label percentageField = (Label) name1.getScene().lookup("#" + percentage);
+            percentageField.setText(subjects.get(i).getPercentage() + "%");
+            ProgressBar barField = (ProgressBar) name1.getScene().lookup("#" + bar);
+            barField.setProgress(subjects.get(i).getZeroToOne());
             TextField nameField = (TextField) name1.getScene().lookup("#" + name);
             nameField.setText(subjects.get(i).getName());
-            subjects.get(i).setTime(Double.toString(subjects.get(i).getTotalHours()));
         }
     }
 
@@ -86,6 +91,23 @@ public class mainController {
 
     public void onAdd() {
         String message = clickedField.getText().trim();
+        if (message.equals("clear")) {
+            clickedField.clear();
+            ArrayList<Subject> temp = new ArrayList<Subject>();
+            for (int i = 0; i < 5; i++) {
+                Subject subject = new Subject();
+                subject.setName(subjects.get(i).getName());
+                temp.add(subject);
+            }
+            System.out.println(temp.size());
+            subjects.clear();
+            for (Subject subject : temp) {
+                subjects.add(subject);
+            }
+            temp.clear();
+            setUi();
+            return;
+        }
         Boolean result = subjects.get(id-1).setTime(message);
         if (!result) {
             clickedField.setText("Invalid");
