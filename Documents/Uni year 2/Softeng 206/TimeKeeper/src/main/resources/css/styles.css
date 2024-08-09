@@ -1,5 +1,67 @@
-.button {
-    background-color: rgb(251, 121, 121);
-    -fx-background-color: rgb(251, 121, 121);
+.pane {
+    background-color: rgb(59, 59, 59);
+    -fx-background-color: rgb(59, 59, 59);
     -fx-text-fill: black;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: rgb(88, 88, 88); /* Gray background color */
+    -fx-background-radius: 10; /* Rounded corners */
+    -fx-border-radius: 10; /* Rounded corners for the border */
+    -fx-padding: 5; /* Padding inside the text field */
+    -fx-text-fill: rgb(255, 255, 255); /* Text color */
+    -fx-border-color: transparent;
+}
+
+.button:hover {
+    -fx-background-color: rgb(100, 100, 100); /* Darker gray background color */
+}
+
+.gray-rounded-text-field {
+    -fx-background-color: rgb(88, 88, 88); /* Gray background color */
+    -fx-background-radius: 10; /* Rounded corners */
+    -fx-border-radius: 10; /* Rounded corners for the border */
+    -fx-padding: 5; /* Padding inside the text field */
+    -fx-text-fill: rgb(255, 255, 255); /* Text color */
+    -fx-border-color: transparent; /* No border color */
+    -fx-alignment: center;
+}
+
+.labels {
+    -fx-pref-width: 33px; /* Fixed width */
+    -fx-pref-height: 19px; /* Fixed height */
+    -fx-alignment: center; /* Center the text within the text field */
+}
+
+.transparent-progress-bar {
+    -fx-background-color: transparent; /* Makes the background of the entire progress bar transparent */
+    -fx-padding: 0; /* Removes padding */
+}
+
+.transparent-progress-bar .track {
+    -fx-background-color: transparent; /* Makes the track (the background) transparent */
+}
+
+.transparent-progress-bar-blue .bar {
+    -fx-background-color: #3498db; /* The color of the filled part of the progress bar */
+}
+
+.red .bar {
+    -fx-background-color: #e74c3c;
+}
+
+.purple .bar {
+    -fx-background-color: #9b59b6;
+}
+
+.green .bar {
+    -fx-background-color: #2ecc71;
+}
+
+.yellow .bar {
+    -fx-background-color: #f1c40f;
 }

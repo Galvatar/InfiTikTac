@@ -108,25 +108,6 @@ public class mainController {
 
     public void onAdd() {
         String message = clickedField.getText().trim();
-        if (message.equals("clear")) {
-            clickedField.clear();
-            ArrayList<Subject> temp = new ArrayList<Subject>();
-            for (int i = 0; i < 5; i++) {
-                Subject subject = new Subject();
-                subject.setName(subjects.get(i).getName());
-                temp.add(subject);
-            }
-            subjects.clear();
-            for (Subject subject : temp) {
-                subjects.add(subject);
-            }
-            totalHours = 0;
-            totalHoursIndividual = 0;
-            extraHours = 0;
-            temp.clear();
-            setUi();
-            return;
-        }
         Boolean result = subjects.get(id-1).setTime(message);
         if (!result) {
             clickedField.clear();
@@ -155,5 +136,23 @@ public class mainController {
         } else {
             hrsMore.setText("Just " + Math.round((40 - totalHoursIndividual) * 100)/100 + " more hours to go!");
         }
+    }
+
+    public void onClear() {
+        ArrayList<Subject> temp = new ArrayList<Subject>();
+        for (int i = 0; i < 5; i++) {
+            Subject subject = new Subject();
+            subject.setName(subjects.get(i).getName());
+            temp.add(subject);
+        }
+        subjects.clear();
+        for (Subject subject : temp) {
+            subjects.add(subject);
+        }
+        totalHours = 0;
+        totalHoursIndividual = 0;
+        extraHours = 0;
+        temp.clear();
+        setUi();
     }
 }
