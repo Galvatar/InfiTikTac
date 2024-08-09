@@ -1,0 +1,5 @@
+.button {
+    background-color: rgb(251, 121, 121);
+    -fx-background-color: rgb(251, 121, 121);
+    -fx-text-fill: black;
+}
