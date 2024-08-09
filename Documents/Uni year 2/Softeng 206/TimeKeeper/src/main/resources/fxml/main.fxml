@@ -22,15 +22,15 @@
       <Label fx:id="hrsAll" layoutX="72.0" layoutY="355.0" prefHeight="37.0" prefWidth="217.0" text="Total hours all time:" />
       <Label fx:id="hrsMore" layoutX="365.0" layoutY="328.0" text="Just x more hours this week!" />
       <Label fx:id="hrsExtra" layoutX="365.0" layoutY="365.0" text="Extra hours worked this week: " />
-      <TextField fx:id="name1" layoutX="53.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" />
-      <TextField fx:id="name2" layoutX="157.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" />
-      <TextField fx:id="name3" layoutX="262.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" />
-      <TextField fx:id="name4" layoutX="369.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" />
-      <TextField fx:id="name5" layoutX="472.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" />
-      <TextField fx:id="add1" layoutX="63.0" layoutY="59.0" prefHeight="26.0" prefWidth="55.0" />
-      <TextField fx:id="add2" layoutX="166.0" layoutY="59.0" prefHeight="26.0" prefWidth="55.0" />
-      <TextField fx:id="add3" layoutX="272.0" layoutY="59.0" prefHeight="26.0" prefWidth="55.0" />
-      <TextField fx:id="add4" layoutX="379.0" layoutY="59.0" prefHeight="26.0" prefWidth="55.0" />
-      <TextField fx:id="add5" layoutX="482.0" layoutY="59.0" prefHeight="26.0" prefWidth="55.0" />
+      <TextField fx:id="name1" layoutX="41.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="name2" layoutX="145.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="name3" layoutX="250.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="name4" layoutX="357.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="name5" layoutX="460.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" />
+      <TextField fx:id="add1" layoutX="63.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" />
+      <TextField fx:id="add2" layoutX="166.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" />
+      <TextField fx:id="add3" layoutX="272.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" />
+      <TextField fx:id="add4" layoutX="379.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" />
+      <TextField fx:id="add5" layoutX="482.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" />
    </children>
 </Pane>
