@@ -8,13 +8,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.File;
 
-import nz.ac.auckland.se206.controllers.Subject;
 import nz.ac.auckland.se206.controllers.mainController;
 
 public class App extends Application {
