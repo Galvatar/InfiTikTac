@@ -80,7 +80,7 @@ public class mainController {
             } else {
                 totalHoursIndividual += subjects.get(i).getHours() - (subjects.get(i).getExtra());
             }
-            if (totalHoursIndividual > hoursRequired) {
+            if (totalHoursIndividual >= hoursRequired) {
                 hrsMore.setText("Congratulations, you completed your " + hoursRequired + " hours!");
             } else {
                 hrsMore.setText("Just " + Math.round((hoursRequired - totalHoursIndividual) * 100)/100 + " more hours to go!");
