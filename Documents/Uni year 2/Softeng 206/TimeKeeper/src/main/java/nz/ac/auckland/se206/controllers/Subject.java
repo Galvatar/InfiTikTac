@@ -79,11 +79,10 @@ public class Subject {
         if (contained) {
             Double temp = Double.parseDouble(time);
             Double newTime = 0.0;
-            while (temp > 1) {
+            while (temp >= 1) {
                 newTime++;
                 temp -= 1;
             }
-            newTime += temp / 0.6;
             newTime = Math.round(newTime * 100.0) / 100.0;
             time = newTime.toString();
         }
