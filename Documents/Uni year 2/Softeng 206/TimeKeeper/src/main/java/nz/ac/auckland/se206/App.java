@@ -33,6 +33,7 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
     stage.setTitle("TimeKeeper");
+    stage.getIcons().add(new javafx.scene.image.Image(App.class.getResourceAsStream("/images/Timekeeper.png")));
     root.requestFocus();
 
     stage.setOnCloseRequest(event -> {
