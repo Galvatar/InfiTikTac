@@ -84,8 +84,10 @@ public class App extends Application {
 
       // Close the BufferedReader
       bufferedReader.close();
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (Exception e) {
+      File file = new File("savedata.txt");
+      file.delete();
+      return;
     }
   }
 
