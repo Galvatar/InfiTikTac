@@ -110,12 +110,13 @@
       <Text fill="#b8b8b84e" layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100% -" />
       <Text fill="#b8b8b84e" layoutX="23.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50% -" />
       <Text fill="#b8b8b84e" layoutX="26.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0% -" />
-      <Button fx:id="clearButton" layoutX="4.0" layoutY="323.0" minWidth="53.0" mnemonicParsing="false" onAction="#onClear" prefHeight="37.0" prefWidth="53.0" text="Clear" />
+      <Button fx:id="clearButton" layoutX="4.0" layoutY="323.0" minWidth="53.0" mnemonicParsing="false" onAction="#onClear" prefHeight="29.0" prefWidth="53.0" styleClass="buttons" stylesheets="@../css/styles.css" text="Clear" />
       <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="8.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Timekeeper.png" />
          </image>
       </ImageView>
       <Rectangle fill="#00000053" height="49.0" layoutX="-7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="45.0" />
+      <Button fx:id="clearButton2" layoutX="4.0" layoutY="365.0" minWidth="53.0" mnemonicParsing="false" onAction="#onReset" prefHeight="26.0" prefWidth="53.0" styleClass="buttons2" stylesheets="@../css/styles.css" text="Reset" textFill="WHITE" />
    </children>
 </Pane>

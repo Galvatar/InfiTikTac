@@ -97,13 +97,31 @@ public class mainController {
 
     public void onSetTitle() {
         String message = clickedField.getText().trim();
-        if (message.isEmpty()||message.length()>11) {
-            clickedField.setText("Invalid");
+        if (message.length()>11) {
+            clickedField.clear();
             return;
         }
         String upperCased = message.toUpperCase();
         subjects.get(id-1).setName(upperCased);
         clickedField.setText(upperCased);
+    }
+
+    public void onReset() {
+        ArrayList<Subject> temp = new ArrayList<Subject>();
+        for (int i = 0; i < 5; i++) {
+            Subject subject = new Subject();
+            temp.add(subject);
+        }
+        subjects.clear();
+        for (Subject subject : temp) {
+            subjects.add(subject);
+        }
+        totalHours = 0;
+        totalHoursIndividual = 0;
+        extraHours = 0;
+        allTimeHours = 0;
+        temp.clear();
+        setUi();
     }
 
     public void onAdd() {

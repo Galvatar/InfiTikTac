@@ -8,16 +8,31 @@
     -fx-text-fill: white;
 }
 
-.button {
+.buttons {
     -fx-background-color: rgb(88, 88, 88); /* Gray background color */
     -fx-background-radius: 10; /* Rounded corners */
     -fx-border-radius: 10; /* Rounded corners for the border */
     -fx-padding: 5; /* Padding inside the text field */
     -fx-text-fill: rgb(255, 255, 255); /* Text color */
+    fx-text-font: 13px "Avenir";
     -fx-border-color: transparent;
 }
 
-.button:hover {
+.buttons2 {
+    -fx-background-color: rgb(195, 9, 9); /* Gray background color */
+    -fx-background-radius: 10; /* Rounded corners */
+    -fx-border-radius: 10; /* Rounded corners for the border */
+    -fx-padding: 5; /* Padding inside the text field */
+    -fx-text-fill: rgb(255, 255, 255); /* Text color */
+    -fx-text-font: 13px "Avenir";
+    -fx-border-color: transparent;
+}
+
+.buttons2:hover {
+    -fx-background-color: rgb(255, 0, 0); /* Darker gray background color */
+}
+
+.buttons:hover {
     -fx-background-color: rgb(100, 100, 100); /* Darker gray background color */
 }
 
