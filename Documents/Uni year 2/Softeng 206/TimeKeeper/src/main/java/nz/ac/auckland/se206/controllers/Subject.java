@@ -59,6 +59,10 @@ public class Subject {
         for (int i = 0; i < time.length(); i++) {
             if (time.charAt(i) == '.') {
                 hours = true;
+                continue;
+            } else if ((time.charAt(i) == '.') && hours) {
+                System.out.println("Invalid time");
+                return false;
             } else if (time.charAt(i) < '0' || time.charAt(i) > '9' || time.length() > 5) {
                 return false;
             }
