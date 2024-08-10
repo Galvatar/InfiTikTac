@@ -53,6 +53,7 @@ public class Subject {
 
     public boolean setTime(String time) {
         hours = false;
+        boolean contained = false;
         if (time.length() == 0) {
             return false;
         }
@@ -60,9 +61,31 @@ public class Subject {
             if (time.charAt(i) == '.') {
                 hours = true;
                 continue;
+            } else if (time.charAt(i) == 'h' || time.charAt(i) == ':') {
+                if (time.charAt(i) == 'h') {
+                    hours = true;
+                    time = time.replace('h','.');
+                    contained = true;
+                }
+                if (time.charAt(i) == ':') {
+                    hours = true;
+                    time = time.replace(':','.');
+                    contained = true;
+                }
             } else if (time.charAt(i) < '0' || time.charAt(i) > '9' || time.length() > 5) {
                 return false;
             }
+        }
+        if (contained) {
+            Double temp = Double.parseDouble(time);
+            Double newTime = 0.0;
+            while (temp > 1) {
+                newTime++;
+                temp -= 1;
+            }
+            newTime += temp / 0.6;
+            newTime = Math.round(newTime * 100.0) / 100.0;
+            time = newTime.toString();
         }
         oldTime = this.time;
         if (hours) {

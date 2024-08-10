@@ -98,6 +98,9 @@ public class mainController {
     }
 
     public void onRecordClick(MouseEvent event) {
+        if (clickedField != null && clickedField.getId().contains("name")) {
+            onSetTitle();
+        }
         clickedField = (TextField) event.getSource();
         id = getNumber(clickedField.getId());
     }
