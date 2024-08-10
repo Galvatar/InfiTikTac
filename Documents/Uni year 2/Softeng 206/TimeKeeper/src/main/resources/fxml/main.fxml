@@ -97,16 +97,16 @@
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="name1" layoutX="41.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name2" layoutX="146.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name3" layoutX="250.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name4" layoutX="355.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name5" layoutX="460.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add1" layoutX="63.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add2" layoutX="167.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add3" layoutX="272.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add4" layoutX="377.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add5" layoutX="482.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name1" layoutX="41.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name2" layoutX="146.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name3" layoutX="250.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name4" layoutX="355.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name5" layoutX="460.0" layoutY="14.0" onAction="#onSetTitle" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add1" layoutX="63.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add2" layoutX="167.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add3" layoutX="272.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add4" layoutX="377.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add5" layoutX="482.0" layoutY="59.0" onAction="#onAdd" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
       <Text fill="#b8b8b84e" layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100% -" />
       <Text fill="#b8b8b84e" layoutX="23.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50% -" />
       <Text fill="#b8b8b84e" layoutX="26.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0% -" />
