@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.application.Platform;
+import javafx.scene.input.KeyEvent;
 
 public class mainController {
     @FXML TextField name1;
@@ -85,6 +86,26 @@ public class mainController {
             } else {
                 hrsMore.setText("Just " + Math.round((hoursRequired - totalHoursIndividual) * 100)/100 + " more hours to go!");
             }
+        }
+    }
+
+    public void onKeyPressed(KeyEvent event) {
+        String keyPressed = event.getText();
+        if ((keyPressed.equals("\t")) && clickedField.getId().contains("name")) {
+            onSetTitle();
+            id++;
+            if (id > 5) {
+                id = 1;
+                clickedField = (TextField) name1.getScene().lookup("#add1");
+            } else {
+                String idString = "name" + id;
+                clickedField = (TextField) name1.getScene().lookup("#" + idString);
+            }
+        } else if ((keyPressed.equals("\t")) && clickedField.getId().contains("add")) {
+            onAdd();
+            id++;
+            String idString = "add" + id;
+            clickedField = (TextField) name1.getScene().lookup("#" + idString);
         }
     }
 
