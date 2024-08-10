@@ -37,7 +37,8 @@ public class mainController {
     private int id;
     private TextField clickedField;
     public static ArrayList<Subject> subjects = new ArrayList<Subject>();
-    public static int allTimeHours = 0;
+    private int hoursRequired = 0;
+    public static double allTimeHours = 0;
     private double totalHours = 0;
     private double totalHoursIndividual = 0;
     private double extraHours = 0;
@@ -47,12 +48,12 @@ public class mainController {
             subjects.add(new Subject());
         }
         Platform.runLater(() -> {
-            setUi();
+            setUi(0, 5);
         });
     }
 
-    public void setUi() {
-        for (int i = 0; i < 5; i++) {
+    public void setUi(int min, int max) {
+        for (int i = min; i < max; i++) {
             String name = "name" + (i+1);
             String bar = "bar" + (i+1);
             String percentage = "percentage" + (i+1);
@@ -63,20 +64,26 @@ public class mainController {
             TextField nameField = (TextField) name1.getScene().lookup("#" + name);
             nameField.setText(subjects.get(i).getName());
             totalHours += subjects.get(i).getHours();
-            allTimeHours += subjects.get(i).getHours();
             extraHours += subjects.get(i).getExtra();
             hrsAll.setText("Total hours all time: " + Math.round(allTimeHours * 100)/100);
             hrsWeek.setText("Total hours this week: " + Math.round(totalHours * 100)/100);
             hrsExtra.setText("Extra hours worked this week: " + Math.round(extraHours * 100)/100);
+            int count = 0;
+            for (int j = 0; j < 5; j++) {
+                if (!(subjects.get(j).getName().equals(""))) {
+                    count++;
+                }
+            }
+            hoursRequired = count * 10;
             if (subjects.get(i).getTotalHours() <= 10) {
                 totalHoursIndividual += subjects.get(i).getHours();
             } else {
                 totalHoursIndividual += subjects.get(i).getHours() - (subjects.get(i).getExtra());
             }
-            if (totalHoursIndividual > 40) {
-                hrsMore.setText("Congratulations, you completed your 40 hours!");
+            if (totalHoursIndividual > hoursRequired) {
+                hrsMore.setText("Congratulations, you completed your " + hoursRequired + " hours!");
             } else {
-                hrsMore.setText("Just " + Math.round((40 - totalHoursIndividual) * 100)/100 + " more hours to go!");
+                hrsMore.setText("Just " + Math.round((hoursRequired - totalHoursIndividual) * 100)/100 + " more hours to go!");
             }
         }
     }
@@ -104,6 +111,7 @@ public class mainController {
         String upperCased = message.toUpperCase();
         subjects.get(id-1).setName(upperCased);
         clickedField.setText(upperCased);
+        setUi(id-1,id);
     }
 
     public void onReset() {
@@ -121,7 +129,7 @@ public class mainController {
         extraHours = 0;
         allTimeHours = 0;
         temp.clear();
-        setUi();
+        setUi(0,5);
     }
 
     public void onAdd() {
@@ -132,28 +140,9 @@ public class mainController {
             return;
         }
         clickedField.clear();
-        String name = "bar" + id;
-        String name2 = "percentage" + id;
-        ProgressBar bar = (ProgressBar) clickedField.getScene().lookup("#" + name);
-        Label percentage = (Label) clickedField.getScene().lookup("#" + name2);
-        bar.setProgress(subjects.get(id-1).getZeroToOne());
-        percentage.setText(subjects.get(id-1).getPercentage() + "%");
-        totalHours += subjects.get(id-1).getHours();
         allTimeHours += subjects.get(id-1).getHours();
-        extraHours += subjects.get(id-1).getExtra();
-        hrsAll.setText("Total hours all time: " + Math.round(allTimeHours * 100)/100);
-        hrsWeek.setText("Total hours this week: " + Math.round(totalHours * 100)/100);
-        hrsExtra.setText("Extra hours worked this week: " + Math.round(extraHours * 100)/100);
-        if (subjects.get(id-1).getTotalHours() <= 10) {
-            totalHoursIndividual += subjects.get(id-1).getHours();
-        } else {
-            totalHoursIndividual += subjects.get(id-1).getHours() - (subjects.get(id-1).getExtra());
-        }
-        if (totalHoursIndividual > 40) {
-            hrsMore.setText("Congratulations, you completed your 40 hours!");
-        } else {
-            hrsMore.setText("Just " + Math.round((40 - totalHoursIndividual) * 100)/100 + " more hours to go!");
-        }
+        setUi(id-1, id);
+        
     }
 
     public void onClear() {
@@ -171,6 +160,6 @@ public class mainController {
         totalHoursIndividual = 0;
         extraHours = 0;
         temp.clear();
-        setUi();
+        setUi(0, 5);
     }
 }

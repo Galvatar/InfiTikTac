@@ -32,6 +32,7 @@ public class App extends Application {
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
+    stage.setResizable(false);
     stage.setTitle("TimeKeeper");
     stage.getIcons().add(new javafx.scene.image.Image(App.class.getResourceAsStream("/images/Timekeeper.png")));
     root.requestFocus();
@@ -59,7 +60,7 @@ public class App extends Application {
       String line;
       while ((line = bufferedReader.readLine()) != null) {
         if (count2 == 5) {
-          mainController.allTimeHours = Integer.parseInt(line);
+          mainController.allTimeHours = Double.parseDouble(line);
           break;
         }
         if (count == 0) {
