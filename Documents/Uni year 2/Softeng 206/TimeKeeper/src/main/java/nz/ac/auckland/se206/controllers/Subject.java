@@ -83,6 +83,7 @@ public class Subject {
                 newTime++;
                 temp -= 1;
             }
+            newTime += temp/0.60;
             newTime = Math.round(newTime * 100.0) / 100.0;
             time = newTime.toString();
         }
