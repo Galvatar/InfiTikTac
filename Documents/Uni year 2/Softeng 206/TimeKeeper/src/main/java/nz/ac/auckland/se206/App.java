@@ -25,6 +25,14 @@ public class App extends Application {
     return fxmlLoader.load();
   }
 
+  public static void setRoot(String fxml) throws IOException {
+    try {
+      scene.setRoot(loadFXML(fxml));
+    } catch (IOException e) {
+      e.printStackTrace();
+  }
+  }
+
   @Override
   public void start(Stage stage) throws Exception {
     Parent root = loadFXML("main");

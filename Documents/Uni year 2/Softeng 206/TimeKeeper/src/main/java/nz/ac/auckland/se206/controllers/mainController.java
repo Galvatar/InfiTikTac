@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.application.Platform;
 import javafx.scene.input.KeyEvent;
+import nz.ac.auckland.se206.App;
 
 public class mainController {
     @FXML TextField name1;
@@ -49,11 +50,11 @@ public class mainController {
             subjects.add(new Subject());
         }
         Platform.runLater(() -> {
-            setUi(0, 5);
+            setUi(0, 5, true);
         });
     }
 
-    public void setUi(int min, int max) {
+    public void setUi(int min, int max, boolean firsttime) {
         for (int i = min; i < max; i++) {
             String name = "name" + (i+1);
             String bar = "bar" + (i+1);
@@ -64,11 +65,12 @@ public class mainController {
             barField.setProgress(subjects.get(i).getZeroToOne());
             TextField nameField = (TextField) name1.getScene().lookup("#" + name);
             nameField.setText(subjects.get(i).getName());
-            totalHours += subjects.get(i).getHours();
+            
+            totalHours += subjects.get(i).getHours(firsttime);
             extraHours += subjects.get(i).getExtra();
-            hrsAll.setText("Total hours all time: " + Math.round(allTimeHours * 100)/100);
-            hrsWeek.setText("Total hours this week: " + Math.round(totalHours * 100)/100);
-            hrsExtra.setText("Extra hours worked this week: " + Math.round(extraHours * 100)/100);
+            hrsAll.setText("Total hours all time: " + Math.round(allTimeHours * 100)/100.0);
+            hrsWeek.setText("Total hours this week: " + Math.round(totalHours * 100)/100.0);
+            hrsExtra.setText("Extra hours worked this week: " + Math.round(extraHours * 100)/100.0);
             int count = 0;
             for (int j = 0; j < 5; j++) {
                 if (!(subjects.get(j).getName().equals(""))) {
@@ -77,14 +79,14 @@ public class mainController {
             }
             hoursRequired = count * 10;
             if (subjects.get(i).getTotalHours() <= 10) {
-                totalHoursIndividual += subjects.get(i).getHours();
+                totalHoursIndividual += subjects.get(i).getHours(firsttime);
             } else {
-                totalHoursIndividual += subjects.get(i).getHours() - (subjects.get(i).getExtra());
+                totalHoursIndividual += subjects.get(i).getHours(firsttime) - (subjects.get(i).getExtra());
             }
             if (totalHoursIndividual >= hoursRequired) {
                 hrsMore.setText("Congratulations, you completed your " + hoursRequired + " hours!");
             } else {
-                hrsMore.setText("Just " + Math.round((hoursRequired - totalHoursIndividual) * 100)/100 + " more hours to go!");
+                hrsMore.setText("Just " + Math.round((hoursRequired - totalHoursIndividual) * 100)/100.0 + " more hours to go!");
             }
         }
     }
@@ -135,7 +137,7 @@ public class mainController {
         String upperCased = message.toUpperCase();
         subjects.get(id-1).setName(upperCased);
         clickedField.setText(upperCased);
-        setUi(id-1,id);
+        setUi(id-1,id, false);
     }
 
     public void onReset() {
@@ -153,7 +155,7 @@ public class mainController {
         extraHours = 0;
         allTimeHours = 0;
         temp.clear();
-        setUi(0,5);
+        setUi(0,5, true);
     }
 
     public void onAdd() {
@@ -164,8 +166,8 @@ public class mainController {
             return;
         }
         clickedField.clear();
-        allTimeHours += subjects.get(id-1).getHours();
-        setUi(id-1, id);
+        allTimeHours += subjects.get(id-1).getHours(false);
+        setUi(id-1, id, false);
         
     }
 
@@ -184,6 +186,14 @@ public class mainController {
         totalHoursIndividual = 0;
         extraHours = 0;
         temp.clear();
-        setUi(0, 5);
+        setUi(0, 5, false);
+    }
+
+    public void onSwitchToDo() {
+        try {
+            App.setRoot("todo");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

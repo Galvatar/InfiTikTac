@@ -106,7 +106,10 @@ public class Subject {
         return this.percentage;
     }
 
-    public double getHours() {
+    public double getHours(boolean firsttime) {
+        if (firsttime) {
+            return this.time/60;
+        }
         return (this.time/60) - (this.oldTime/60);
     }
 

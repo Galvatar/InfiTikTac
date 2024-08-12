@@ -8,115 +8,128 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="pane" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.mainController">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="600.0" styleClass="pane" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.mainController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="200.0" layoutX="-27.0" layoutY="-150.0" stroke="#2f2f2f" strokeType="INSIDE" width="651.0" />
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#545454" height="101.0" layoutX="62.0" layoutY="323.0" stroke="TRANSPARENT" strokeType="INSIDE" width="575.0" />
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="482.0" layoutY="67.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="377.0" layoutY="67.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="272.0" layoutY="67.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="167.0" layoutY="67.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
-      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="63.0" layoutY="67.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
-      <ProgressBar fx:id="bar1" layoutX="-4.0" layoutY="172.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="200.0" layoutX="-26.0" layoutY="-131.0" stroke="#2f2f2f" strokeType="INSIDE" width="651.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#545454" height="101.0" layoutX="63.0" layoutY="342.0" stroke="TRANSPARENT" strokeType="INSIDE" width="575.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="483.0" layoutY="86.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="378.0" layoutY="86.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="273.0" layoutY="86.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="168.0" layoutY="86.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#8a8a8a" height="246.0" layoutX="64.0" layoutY="86.0" stroke="TRANSPARENT" strokeType="INSIDE" width="55.0" />
+      <ProgressBar fx:id="bar1" layoutX="-3.0" layoutY="191.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
          <styleClass>
             <String fx:value="transparent-progress-bar" />
             <String fx:value="transparent-progress-bar-blue" />
          </styleClass>
       </ProgressBar>
-      <ProgressBar fx:id="bar2" layoutX="100.0" layoutY="172.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
+      <ProgressBar fx:id="bar2" layoutX="101.0" layoutY="191.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
          <styleClass>
             <String fx:value="transparent-progress-bar" />
             <String fx:value="purple" />
          </styleClass>
       </ProgressBar>
-      <ProgressBar fx:id="bar3" layoutX="205.0" layoutY="172.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
+      <ProgressBar fx:id="bar3" layoutX="206.0" layoutY="191.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
          <styleClass>
             <String fx:value="transparent-progress-bar" />
             <String fx:value="red" />
          </styleClass>
       </ProgressBar>
-      <ProgressBar fx:id="bar4" layoutX="310.0" layoutY="172.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
+      <ProgressBar fx:id="bar4" layoutX="311.0" layoutY="191.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
          <styleClass>
             <String fx:value="transparent-progress-bar" />
             <String fx:value="yellow" />
          </styleClass>
       </ProgressBar>
-      <ProgressBar fx:id="bar5" layoutX="415.0" layoutY="172.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
+      <ProgressBar fx:id="bar5" layoutX="416.0" layoutY="191.0" prefHeight="37.0" prefWidth="190.0" progress="0.0" rotate="-90.0" stylesheets="@../css/styles.css">
          <styleClass>
             <String fx:value="transparent-progress-bar" />
             <String fx:value="green" />
          </styleClass>
       </ProgressBar>
-      <Label fx:id="percentage1" layoutX="77.0" layoutY="291.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="percentage1" layoutX="78.0" layoutY="310.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="percentage2" layoutX="179.0" layoutY="291.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="percentage2" layoutX="180.0" layoutY="310.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="percentage3" layoutX="284.0" layoutY="291.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="percentage3" layoutX="285.0" layoutY="310.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="percentage4" layoutX="389.0" layoutY="291.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="percentage4" layoutX="390.0" layoutY="310.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="percentage5" layoutX="494.0" layoutY="291.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="percentage5" layoutX="495.0" layoutY="310.0" styleClass="labels" stylesheets="@../css/styles.css" text="0%" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="hrsWeek" layoutX="72.0" layoutY="318.0" prefHeight="37.0" prefWidth="217.0" text="Total hours this week:" textFill="WHITE">
+      <Label fx:id="hrsWeek" layoutX="73.0" layoutY="337.0" prefHeight="37.0" prefWidth="217.0" text="Total hours this week:" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="hrsAll" layoutX="72.0" layoutY="355.0" prefHeight="37.0" prefWidth="217.0" text="Total hours all time:" textFill="WHITE">
+      <Label fx:id="hrsAll" layoutX="73.0" layoutY="374.0" prefHeight="37.0" prefWidth="217.0" text="Total hours all time:" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="hrsMore" layoutX="298.0" layoutY="328.0" text="Just x more hours this week!" textFill="WHITE">
+      <Label fx:id="hrsMore" layoutX="299.0" layoutY="347.0" text="Just x more hours this week!" textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="hrsExtra" layoutX="298.0" layoutY="365.0" text="Extra hours worked this week: " textFill="WHITE">
+      <Label fx:id="hrsExtra" layoutX="299.0" layoutY="384.0" text="Extra hours worked this week: " textFill="WHITE">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="name1" layoutX="41.0" layoutY="14.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name2" layoutX="146.0" layoutY="14.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name3" layoutX="250.0" layoutY="14.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name4" layoutX="355.0" layoutY="14.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="name5" layoutX="460.0" layoutY="14.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add1" layoutX="63.0" layoutY="59.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add2" layoutX="167.0" layoutY="59.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add3" layoutX="272.0" layoutY="59.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add4" layoutX="377.0" layoutY="59.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <TextField fx:id="add5" layoutX="482.0" layoutY="59.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
-      <Text fill="#b8b8b84e" layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100% -" />
-      <Text fill="#b8b8b84e" layoutX="23.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50% -" />
-      <Text fill="#b8b8b84e" layoutX="26.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0% -" />
-      <Button fx:id="clearButton" layoutX="4.0" layoutY="323.0" minWidth="53.0" mnemonicParsing="false" onAction="#onClear" prefHeight="29.0" prefWidth="53.0" styleClass="buttons" stylesheets="@../css/styles.css" text="Clear" />
-      <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="8.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="name1" layoutX="42.0" layoutY="33.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name2" layoutX="147.0" layoutY="33.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name3" layoutX="251.0" layoutY="33.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name4" layoutX="356.0" layoutY="33.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="name5" layoutX="461.0" layoutY="33.0" onAction="#onSetTitle" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="100.0" promptText="Paper name..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add1" layoutX="64.0" layoutY="78.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add2" layoutX="168.0" layoutY="78.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add3" layoutX="273.0" layoutY="78.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add4" layoutX="378.0" layoutY="78.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <TextField fx:id="add5" layoutX="483.0" layoutY="78.0" onAction="#onAdd" onKeyPressed="#onKeyPressed" onMouseClicked="#onRecordClick" prefHeight="26.0" prefWidth="55.0" promptText="Add..." styleClass="gray-rounded-text-field" stylesheets="@../css/styles.css" />
+      <Text fill="#b8b8b84e" layoutX="15.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100% -" />
+      <Text fill="#b8b8b84e" layoutX="24.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50% -" />
+      <Text fill="#b8b8b84e" layoutX="27.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0% -" />
+      <Button fx:id="clearButton" layoutX="5.0" layoutY="342.0" minWidth="53.0" mnemonicParsing="false" onAction="#onClear" prefHeight="29.0" prefWidth="53.0" styleClass="buttons" stylesheets="@../css/styles.css" text="Clear" />
+      <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Timekeeper.png" />
          </image>
       </ImageView>
-      <Rectangle fill="#00000053" height="49.0" layoutX="-7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="45.0" />
-      <Button fx:id="clearButton2" layoutX="4.0" layoutY="365.0" minWidth="53.0" mnemonicParsing="false" onAction="#onReset" prefHeight="26.0" prefWidth="53.0" styleClass="buttons2" stylesheets="@../css/styles.css" text="Reset" textFill="WHITE" />
+      <Rectangle fill="#00000053" height="49.0" layoutX="-6.0" layoutY="19.0" stroke="TRANSPARENT" strokeType="INSIDE" width="45.0" />
+      <Button fx:id="clearButton2" layoutX="5.0" layoutY="384.0" minWidth="53.0" mnemonicParsing="false" onAction="#onReset" prefHeight="26.0" prefWidth="53.0" styleClass="buttons2" stylesheets="@../css/styles.css" text="Reset" textFill="WHITE" />
+      <Rectangle fill="#222222" height="26.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+      <Polygon fill="#3b3b3b" layoutX="89.0" layoutY="-14.0" points="-50.0, 40.0, 74.5, 40.0, 13.5, -66.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Text fill="WHITE" layoutX="65.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time tracker">
+         <font>
+            <Font name="Avenir Roman" size="13.0" />
+         </font>
+      </Text>
+      <Polygon fill="#2f2f2f" layoutX="213.0" layoutY="-14.0" onMouseClicked="#onSwitchToDo" points="-50.0, 40.0, 74.5, 40.0, 13.5, -66.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Text fill="WHITE" layoutX="197.0" layoutY="19.0" onMouseClicked="#onSwitchToDo" strokeType="OUTSIDE" strokeWidth="0.0" text="To-do list">
+         <font>
+            <Font name="Avenir Roman" size="13.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
