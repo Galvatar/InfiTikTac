@@ -40,7 +40,7 @@
             <Font name="Avenir Roman" size="30.0" />
          </font>
       </Label>
-      <TextArea fx:id="completedArea" layoutX="360.0" layoutY="146.0" prefHeight="246.0" prefWidth="218.0" promptText="Completed items will show up here..." styleClass="empty-text-area" stylesheets="@../css/styles.css" wrapText="true">
+      <TextArea fx:id="completedArea" disable="true" layoutX="360.0" layoutY="146.0" prefHeight="246.0" prefWidth="218.0" promptText="Completed items will show up here..." styleClass="empty-text-area" stylesheets="@../css/styles.css" wrapText="true">
          <font>
             <Font name="Avenir Roman" size="13.0" />
          </font>
