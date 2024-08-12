@@ -46,6 +46,24 @@
     -fx-alignment: center;
 }
 
+.empty-text-area {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.empty-text-area .scroll-pane {
+-fx-background-color: transparent;
+}
+
+.empty-text-area .scroll-pane .viewport{
+-fx-background-color: transparent;
+}
+
+
+.empty-text-area .scroll-pane .content{
+-fx-background-color: transparent;
+}
+
 .labels {
     -fx-pref-width: 33px; /* Fixed width */
     -fx-pref-height: 19px; /* Fixed height */

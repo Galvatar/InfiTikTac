@@ -14,9 +14,11 @@ import java.io.FileReader;
 import java.io.File;
 
 import nz.ac.auckland.se206.controllers.mainController;
+import nz.ac.auckland.se206.controllers.todoController;
+import nz.ac.auckland.se206.controllers.Tasks;
 
 public class App extends Application {
-  private static Scene scene;
+  public static Scene scene;
   private int count = 0;
   private int count2 = 0;
 
@@ -67,34 +69,39 @@ public class App extends Application {
       // Read the file line by line
       String line;
       while ((line = bufferedReader.readLine()) != null) {
-        if (count2 == 5) {
-          mainController.allTimeHours = Double.parseDouble(line);
-          break;
-        }
-        if (count == 0) {
-          mainController.subjects.get(count2).setName(line);
-          count++;
-        } else if (count == 1) {
-          mainController.subjects.get(count2).setDoubleTime(Double.parseDouble(line));
-          count++;
-        } else if (count == 2) {
-          mainController.subjects.get(count2).setOldTime(Double.parseDouble(line));
-          count++;
-        } else if (count == 3) {
-          mainController.subjects.get(count2).setZeroToOne(Double.parseDouble(line));
-          count++;
-        } else if (count == 4) {
-          mainController.subjects.get(count2).setPercentage(Integer.parseInt(line));
-          count = 0;
-          count2++;
+        if (count == 6) {
+          todoController.tasks.add(new Tasks(line));
+        } else {
+          if (count2 == 5) {
+            mainController.allTimeHours = Double.parseDouble(line);
+            count = 6;
+          }
+          if (count == 0) {
+            mainController.subjects.get(count2).setName(line);
+            count++;
+          } else if (count == 1) {
+            mainController.subjects.get(count2).setDoubleTime(Double.parseDouble(line));
+            count++;
+          } else if (count == 2) {
+            mainController.subjects.get(count2).setOldTime(Double.parseDouble(line));
+            count++;
+          } else if (count == 3) {
+            mainController.subjects.get(count2).setZeroToOne(Double.parseDouble(line));
+            count++;
+          } else if (count == 4) {
+            mainController.subjects.get(count2).setPercentage(Integer.parseInt(line));
+            count = 0;
+            count2++;
+          }
         }
       }
 
       // Close the BufferedReader
       bufferedReader.close();
     } catch (Exception e) {
-      File file = new File("savedata.txt");
-      file.delete();
+      e.printStackTrace();
+      // File file = new File("savedata.txt");
+      // file.delete();
       return;
     }
   }
@@ -121,6 +128,9 @@ public class App extends Application {
         printWriter.println(mainController.subjects.get(i).getPercentage());
       }
       printWriter.println(mainController.allTimeHours);
+      for (int i = 0; i < todoController.tasks.size(); i++) {
+        printWriter.println(todoController.tasks.get(i).getTask());
+      }
 
       // Close the PrintWriter
       System.out.println("File saved");
