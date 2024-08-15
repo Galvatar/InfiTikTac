@@ -37,6 +37,7 @@ public class mainController {
     private boolean gameOver = false;
     private int Xscore = 0;
     private int Oscore = 0;
+    private String mode = "PvP";
 
     private enum Player {
         X, O
@@ -112,30 +113,71 @@ public class mainController {
     @FXML
     private void onClick(MouseEvent event) {
         if (!gameOver) {
-            Rectangle box = (Rectangle) event.getSource();
-            int id = Integer.parseInt(box.getId().substring(3));
-            if (Xints.contains(id) || Oints.contains(id)) {
-                return;
-            }
-            Text lbl = (Text) returnElement("lbl", id);
-            if (currentPlayer == Player.X) {
-                currentPlayer = Player.O;
-                lbl.setText("X");
-                turnLabel.setText("Player O");
-                Xints.add(id);
-                if (Oints.size() == 3) {
-                    lbl = (Text) returnElement("lbl", Oints.get(0));
-                    lbl.setOpacity(0.5);
+            if (mode.equals("PvP")) {                
+                Rectangle box = (Rectangle) event.getSource();
+                int id = Integer.parseInt(box.getId().substring(3));
+                if (Xints.contains(id) || Oints.contains(id)) {
+                    return;
                 }
+                Text lbl = (Text) returnElement("lbl", id);
+                if (currentPlayer == Player.X) {
+                    currentPlayer = Player.O;
+                    lbl.setText("X");
+                    turnLabel.setText("Player O");
+                    Xints.add(id);
+                    if (Oints.size() == 3) {
+                        lbl = (Text) returnElement("lbl", Oints.get(0));
+                        lbl.setOpacity(0.5);
+                    }
+                } else {
+                    currentPlayer = Player.X;
+                    lbl.setText("O");
+                    turnLabel.setText("Player X");
+                    Oints.add(id);
+                    if (Xints.size() == 3) {
+                        lbl = (Text) returnElement("lbl", Xints.get(0));
+                        lbl.setOpacity(0.5);
+                    }
+                }
+                checkNumber();
+                checkVictory();
             } else {
-                currentPlayer = Player.X;
-                lbl.setText("O");
-                turnLabel.setText("Player X");
-                Oints.add(id);
-                if (Xints.size() == 3) {
-                    lbl = (Text) returnElement("lbl", Xints.get(0));
-                    lbl.setOpacity(0.5);
+                Rectangle box = (Rectangle) event.getSource();
+                int id = Integer.parseInt(box.getId().substring(3));
+                if (Xints.contains(id) || Oints.contains(id)) {
+                    return;
                 }
+                Text lbl = (Text) returnElement("lbl", id);
+                if (currentPlayer == Player.X) {
+                    currentPlayer = Player.O;
+                    lbl.setText("X");
+                    turnLabel.setText("Player O");
+                    Xints.add(id);
+                    if (Oints.size() == 3) {
+                        lbl = (Text) returnElement("lbl", Oints.get(0));
+                        lbl.setOpacity(0.5);
+                    }
+                    checkNumber();
+                    checkVictory();
+                    onAi();
+                }
+            }
+        }
+    }
+
+    @FXML
+    private void onAi() {
+        if (!gameOver) {
+            Ai ai = new Ai();
+            int move = ai.getMove(Oints, Xints);
+            Text lbl = (Text) returnElement("lbl", move);
+            lbl.setText("O");
+            Oints.add(move);
+            currentPlayer = Player.X;
+            turnLabel.setText("Player X");
+            if (Xints.size() == 3) {
+                lbl = (Text) returnElement("lbl", Xints.get(0));
+                lbl.setOpacity(0.5);
             }
             checkNumber();
             checkVictory();
@@ -161,6 +203,7 @@ public class mainController {
     @FXML
     private void onReset() {
         gameOver = false;
+        currentPlayer = Player.X;
         Xints.clear();
         Oints.clear();
         for (int i = 1; i < 10; i++) {
