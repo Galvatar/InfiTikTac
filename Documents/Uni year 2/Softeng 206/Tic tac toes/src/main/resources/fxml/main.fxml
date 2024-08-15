@@ -66,19 +66,21 @@
             <Font name="System Bold" size="96.0" />
          </font>
       </Text>
-      <Label fx:id="turnLabel" layoutX="181.0" layoutY="6.0" styleClass="black" stylesheets="@../css/styles.css" text="Player X">
+      <Label fx:id="turnLabel" layoutX="177.0" layoutY="5.0" styleClass="black" stylesheets="@../css/styles.css" text="Player X">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
       <Button fx:id="resetBtn" layoutX="27.0" layoutY="432.0" mnemonicParsing="false" onAction="#onReset" prefHeight="31.0" prefWidth="247.0" styleClass="brown-button" stylesheets="@../css/styles.css" text="Reset" />
-      <Text fx:id="lblX" layoutX="38.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X score: 0" />
-      <Text fx:id="lblO" layoutX="333.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O score: 0" />
       <Button fx:id="switchBtn" layoutX="279.0" layoutY="432.0" mnemonicParsing="false" onAction="#onSwitch" prefHeight="31.0" prefWidth="126.0" styleClass="brown-button" stylesheets="@../css/styles.css" text="AI" />
-      <Text fx:id="lblAi" layoutX="259.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Ai)">
+      <Text fx:id="lblAi" layoutX="252.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Ai)">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#af9d78" height="54.0" layoutX="32.0" layoutY="-17.0" stroke="TRANSPARENT" strokeType="INSIDE" width="72.0" />
+      <Text fx:id="lblX" layoutX="38.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X score: 0" />
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#af9d78" height="54.0" layoutX="325.0" layoutY="-17.0" stroke="TRANSPARENT" strokeType="INSIDE" width="72.0" />
+      <Text fx:id="lblO" layoutX="333.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O score: 0" />
    </children>
 </Pane>
