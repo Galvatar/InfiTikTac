@@ -16,3 +16,7 @@
     -fx-cursor: hand; /* Changes the cursor to a pointer when hovering */
     -fx-font-size: 16px; /* Sets the font size */
 }
+
+.brown-button:hover {
+    -fx-background-color: rgb(97,84,56); /* Darker brown for hover effect */
+}

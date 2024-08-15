@@ -8,6 +8,7 @@ import javafx.application.Platform;
 import javafx.scene.text.Text;
 import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
+import javafx.scene.control.Button;
 
 public class mainController {
     @FXML private Rectangle box1;
@@ -28,9 +29,11 @@ public class mainController {
     @FXML private Text lbl7;
     @FXML private Text lbl8;
     @FXML private Text lbl9;
+    @FXML private Text lblAi;
     @FXML private Label turnLabel;
     @FXML private Text lblX;
     @FXML private Text lblO;
+    @FXML private Button switchBtn;
 
     private ArrayList<Integer> Xints = new ArrayList<Integer>();
     private ArrayList<Integer> Oints = new ArrayList<Integer>();
@@ -47,6 +50,7 @@ public class mainController {
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
+            lblAi.setVisible(false);
             turnLabel.setText("Player X");
             for (int i = 1; i < 10; i++) {
                 Text lbl = (Text) returnElement("lbl", i);
@@ -216,5 +220,21 @@ public class mainController {
         } else {
             turnLabel.setText("Player O");
         }
+    }
+
+    @FXML
+    private void onSwitch() {
+        if (mode.equals("PvP")) {
+            mode = "PvAI";
+            switchBtn.setText("PvP");
+            lblAi.setVisible(true);
+        } else {
+            mode = "PvP";
+            switchBtn.setText("PvAI");
+            lblAi.setVisible(false);
+        }
+        onReset();
+        lblX.setText("X score: 0");
+        lblO.setText("O score: 0");
     }
 }

@@ -71,8 +71,14 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Button fx:id="resetBtn" layoutX="27.0" layoutY="432.0" mnemonicParsing="false" onAction="#onReset" prefHeight="31.0" prefWidth="377.0" styleClass="brown-button" stylesheets="@../css/styles.css" text="Reset" />
+      <Button fx:id="resetBtn" layoutX="27.0" layoutY="432.0" mnemonicParsing="false" onAction="#onReset" prefHeight="31.0" prefWidth="247.0" styleClass="brown-button" stylesheets="@../css/styles.css" text="Reset" />
       <Text fx:id="lblX" layoutX="38.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X score: 0" />
       <Text fx:id="lblO" layoutX="333.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O score: 0" />
+      <Button fx:id="switchBtn" layoutX="279.0" layoutY="432.0" mnemonicParsing="false" onAction="#onSwitch" prefHeight="31.0" prefWidth="126.0" styleClass="brown-button" stylesheets="@../css/styles.css" text="AI" />
+      <Text fx:id="lblAi" layoutX="259.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Ai)">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
