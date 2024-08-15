@@ -28,14 +28,17 @@ public class Ai {
             }
         } else if (getOffensiveMove() != 0) {
             move = getOffensiveMove();
+            System.out.println("AI moveO: " + move);
         } else if (getDefensiveMove() != 0) {
             move = getDefensiveMove();
+            System.out.println("AI moveD: " + move);
         } else {
             while (ai.contains(move) || human.contains(move)) {
                 move = getRandomInteger();
             }
+            System.out.println("AI moveR: " + move);
         }
-        System.out.println("AI move: " + move);
+        
         return move;
     }
 
@@ -106,16 +109,23 @@ public class Ai {
                 return i;
             }
         }
-        for (int i = 1; i <= 3; i += 2) {
-            if (ai.contains(i) && ai.contains(i + 4) && !human.contains(i + 8)) {
-                return i + 8;
-            }
-            if (ai.contains(i) && ai.contains(i + 8) && !human.contains(i + 4)) {
-                return i + 4;
-            }
-            if (ai.contains(i + 4) && ai.contains(i + 8) && !human.contains(i)) {
-                return i;
-            }
+        if (ai.contains(1) && ai.contains(5) && !human.contains(9)) {
+            return 9;
+        }
+        if (ai.contains(1) && ai.contains(9) && !human.contains(5)) {
+            return 5;
+        }
+        if (ai.contains(5) && ai.contains(9) && !human.contains(1)) {
+            return 1;
+        }
+        if (ai.contains(3) && ai.contains(5) && !human.contains(7)) {
+            return 7;
+        }
+        if (ai.contains(3) && ai.contains(7) && !human.contains(5)) {
+            return 5;
+        }
+        if (ai.contains(5) && ai.contains(7) && !human.contains(3)) {
+            return 3;
         }
         return 0;
     }
