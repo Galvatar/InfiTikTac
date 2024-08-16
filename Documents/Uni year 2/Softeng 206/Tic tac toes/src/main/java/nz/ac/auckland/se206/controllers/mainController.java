@@ -8,9 +8,14 @@ import javafx.application.Platform;
 import javafx.scene.text.Text;
 import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
+
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
+import javafx.beans.binding.DoubleBinding;
 
 public class mainController {
+    @FXML private Pane scalePane;
     @FXML private Rectangle box1;
     @FXML private Rectangle box2;
     @FXML private Rectangle box3;
@@ -20,6 +25,7 @@ public class mainController {
     @FXML private Rectangle box7;
     @FXML private Rectangle box8;
     @FXML private Rectangle box9;
+    @FXML private Rectangle backRectangle;
     @FXML private Text lbl1;
     @FXML private Text lbl2;
     @FXML private Text lbl3;
@@ -34,6 +40,8 @@ public class mainController {
     @FXML private Text lblX;
     @FXML private Text lblO;
     @FXML private Button switchBtn;
+    @FXML private Button resetBtn;
+
 
     private ArrayList<Integer> Xints = new ArrayList<Integer>();
     private ArrayList<Integer> Oints = new ArrayList<Integer>();
@@ -56,6 +64,22 @@ public class mainController {
                 Text lbl = (Text) returnElement("lbl", i);
                 lbl.setText("");
             }
+            Scene scene = App.getScene();
+
+            scalePane.layoutXProperty().bind(scene.widthProperty().subtract(385).divide(2));
+            scalePane.layoutYProperty().bind(scene.heightProperty().subtract(500).divide(2));
+            DoubleBinding scale = new DoubleBinding() {
+                {
+                    super.bind(scene.widthProperty(), scene.heightProperty());
+                }
+
+                @Override
+                protected double computeValue() {
+                    return Math.min(scene.widthProperty().doubleValue() / 431, scene.heightProperty().doubleValue() / 469);
+                }
+            };
+            scalePane.scaleXProperty().bind(scale);
+            scalePane.scaleYProperty().bind(scale);
         });
     }
 

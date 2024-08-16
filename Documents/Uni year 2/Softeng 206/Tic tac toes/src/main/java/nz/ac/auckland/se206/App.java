@@ -17,12 +17,11 @@ public class App extends Application {
 
   @Override
     public void start(Stage stage) throws Exception {
-      Parent root = loadFXML("main");
+      Parent root = loadFXML("mainR");
       
       scene = new Scene(root);
       stage.setScene(scene);
       stage.show();
-      stage.setResizable(false);
       stage.setTitle("Infinite Tic Tac Toe");
       root.requestFocus();
     }
